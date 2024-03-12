@@ -5,9 +5,9 @@ IS_NEX = 1-IS_SNA
 ; altetnative shading
 ULA_PALETTE=0
 ; enable drawing to back buffer so no tearing
-ULA_BACKBUFFER = 0
+ULA_BACKBUFFER = 1
 
-; 0 = ULA , 1 = Mode2 ( 256 col )
+; 1 = ULA , 0 = Mode2 ( 256 col )
 ULA_GRAPHICS = 0
 
 ;0 = wire frame , 1 = filled

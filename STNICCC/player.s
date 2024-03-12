@@ -51,11 +51,12 @@ start:
     ld a,0
     out($fe),a
 
-    ld a,bank(_1)                     ; first page we have loaded the data from
-    ld b,bank(_2)                     ; first page we have loaded the data from
+    ld a,$1e;bank(_1)                     ; first page we have loaded the data from
+    ld b,$1e;bank(_2)                     ; first page we have loaded the data from
     call mem_init
 
-if IS_NEX == 0
+;    my_break
+;if IS_NEX == 0
     call load_file
     jr nc , go
 error1:   
@@ -63,7 +64,7 @@ error1:
     and 7
     out($fe),a
     jr error1    
-endif
+;endif
 go: 
     ld a,0
     out($fe),a
@@ -439,11 +440,13 @@ include "line_draw.s"
 ;include "coso_jag.s"
 ;include "mad_max_z80.s"
 
+
 if IS_NEX==1
-   seg STNICC_SEG
- _1:
-    incbin "scene1.bin"
-_2:  ds 1
+;   seg STNICC_SEG
+; _1:
+; 
+;    incbin "scene1.bin"
+;_2:  ds 1
 
  	savenex "player.nex",start
 endif
